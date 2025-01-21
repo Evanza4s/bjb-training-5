@@ -21,9 +21,6 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
 } from "@chakra-ui/react";
 import {
   FiHome,
@@ -48,11 +45,6 @@ interface NavItemProps extends FlexProps {
   localtion: string;
 }
 
-interface BreadItemsProps extends FlexProps {
-  name: string;
-  location: string;
-}
-
 interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
@@ -64,11 +56,6 @@ interface SidebarProps extends BoxProps {
 const LinkItems: Array<LinkItemProps> = [
   { name: "Home", icon: FiHome, location: "/" },
   { name: "Settings", icon: FiSettings, location: "/settings" },
-];
-
-const BreadItems: Array<BreadItemsProps> = [
-  { name: "Home", location: "/" },
-  { name: "Settings", location: "/settings" },
 ];
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
@@ -161,16 +148,6 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       >
         Vanzart
       </Text>
-
-      <Breadcrumb>
-        {BreadItems.map((bread) => (
-          <BreadcrumbItem key={bread.name}>
-            <BreadcrumbLink as={Link} href={bread.location}>
-              {bread.name}
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-        ))}
-      </Breadcrumb>
 
       <HStack spacing={{ base: "0", md: "6" }}>
         <IconButton

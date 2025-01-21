@@ -17,9 +17,10 @@ export default function Form() {
       align={"center"}
       justify={"center"}
       bg={useColorModeValue("gray.50", "gray.800")}
+      gap="2"
     >
-      <Box>
-        <Stack w={"75vh"}>
+      <Stack w={"full"} spacing={4}>
+        <Box display={"flex"} gap={2}>
           <FormControl>
             <FormLabel>Item 1</FormLabel>
             <Input />
@@ -28,9 +29,17 @@ export default function Form() {
             <FormLabel>Item 2</FormLabel>
             <Input />
           </FormControl>
-          <Button>Submit</Button>
-        </Stack>
-      </Box>
+        </Box>
+        <FormControl>
+          <FormLabel>Item 3</FormLabel>
+          <Input />
+        </FormControl>
+        <FormControl>
+          <FormLabel>Item 4</FormLabel>
+          <Input />
+        </FormControl>
+        <Button>Submit</Button>
+      </Stack>
     </Flex>
   );
 }
